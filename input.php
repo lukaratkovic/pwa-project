@@ -45,6 +45,6 @@
     <?php
         include_once('footer.php');
     ?>
-    <script src="./js/validate.js"></script>
+    <script src="./js/input_validate.js"></script>
 </body>
 </html>

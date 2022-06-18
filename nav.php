@@ -15,6 +15,9 @@
         <li>
             <a href="./admin.php">Administracija</a>
         </li>
+        <li>
+            <a href="./register.php">Registracija</a>
+        </li>
     </ul>
 </nav>
 <hr>

@@ -103,6 +103,19 @@ article img{
     object-position: 0 0;
 }
 
+/* Registration form */
+#registration_form{
+    text-align: center;
+}
+
+#registration_form > form > input{
+    width: 20%;
+}
+
+#registration_error{
+    color:red;
+    text-align: center;
+}
 
 /* Footer */
 
