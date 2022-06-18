@@ -30,23 +30,23 @@
     </main>
 
     <?php
-        if(!isset($_POST['username'], $_POST['password'])) die();
+        if(isset($_POST['username'], $_POST['password'])){
+            $username = $_POST['username'];
+            $password = password_hash($_POST['password'], CRYPT_BLOWFISH);
 
-        $username = $_POST['username'];
-        $password = password_hash($_POST['password'], CRYPT_BLOWFISH);
-
-        include_once('./connect.php');
-        $statement = $dbc->prepare("SELECT EXISTS(SELECT * FROM user WHERE username = ?) as userExists");
-        $statement->bind_param('s',$username);
-        $statement->execute();
-        $result = $statement->get_result();
-        if(($result->fetch_array())['userExists']){
-            echo "<div id='registration_error'>Registracija neuspješna! Korisničko ime već postoji!</div>";
-        }
-        else{
-            $statement = $dbc->prepare("INSERT INTO user (username, password) VALUES (?,?)");
-            $statement->bind_param('ss',$username,$password);
+            include_once('./connect.php');
+            $statement = $dbc->prepare("SELECT EXISTS(SELECT * FROM user WHERE username = ?) as userExists");
+            $statement->bind_param('s',$username);
             $statement->execute();
+            $result = $statement->get_result();
+            if(($result->fetch_array())['userExists']){
+                echo "<div id='registration_error'>Registracija neuspješna! Korisničko ime već postoji!</div>";
+            }
+            else{
+                $statement = $dbc->prepare("INSERT INTO user (username, password) VALUES (?,?)");
+                $statement->bind_param('ss',$username,$password);
+                $statement->execute();
+            }
         }
     ?>
 
