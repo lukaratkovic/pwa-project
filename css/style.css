@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+header img{
+    width: 20%;
+    margin-left: 20%;
+}
+
+/* Navigation */
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Articles list */
+
+article img{
+    width: 100%;
+}
+
+.articleList{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.articleList article{
+    max-width: 15%;
+    padding: 20px;
+}
+
+/* Input form */
+
+#input_form{
+    height: 100%;
+}
+
+.validation_error{
+    color: red;
+    display: none;
+}
+
+#image_input{
+    padding: 4px 0;
+}
+
+/* Admin page */
+#admin_article_list table{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#admin_article_list table,
+#admin_article_list td,
+#admin_article_list th{
+    border: 1px solid black;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.editArticleButton, .deleteArticleButton{
+    color: blue;
+    cursor: pointer;
+}
+
+/* Category list */
+.category_article img{
+    max-height: 20vh;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+
+/* Footer */
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: lightgray;
+}
+
+footer p{
+    margin: 0;
+}
