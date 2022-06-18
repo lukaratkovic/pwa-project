@@ -40,12 +40,36 @@ article img{
 /* Input form */
 
 #input_form{
-    height: 100%;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+#input_form input:not(input[type='checkbox']),
+#input_form select,
+#input_form textarea{
+    width: 80%;
+    margin-top: 5px;
+}
+
+#input_form input[type='text'],
+#input_form textarea{
+    padding: 3px;
+}
+
+#input_form input[type='checkbox']{
+    margin-top: 20px;
+}
+
+#input_form select{
+    text-align: center;
 }
 
 .validation_error{
     color: red;
     display: none;
+    width: 80%;
+    margin: auto;
 }
 
 #image_input{

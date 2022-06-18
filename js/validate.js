@@ -1,11 +1,15 @@
 let submitButton = document.getElementById('submit');
+let resetButton = document.getElementById('reset');
+
+let imageBorder = document.getElementById('image_input');
+
 let titleError = document.getElementById('title_error_message');
 let summaryError = document.getElementById('summary_error_message');
 let contentError = document.getElementById('content_error_message');
 let imageError = document.getElementById('file_error_message');
-let imageBorder = document.getElementById('image_input');
 let categoryError = document.getElementById('category_error_message');
 
+// Form validation
 submitButton.onclick = (event) => {
     let valid = true;
     let title = document.getElementById('title');
@@ -65,4 +69,18 @@ submitButton.onclick = (event) => {
     }
 
     if(!valid) event.preventDefault();
+}
+
+// Reset button clears all error messages
+resetButton.onclick = () => {
+    titleError.style.display = 'none';
+    title.style.border = '#858585 1px solid';
+    summaryError.style.display = 'none';
+    summary.style.border = '#858585 1px solid';
+    contentError.style.display = 'none';
+    content.style.border = '#858585 1px solid';
+    imageError.style.display = 'none';
+    imageBorder.style.border = 'none';
+    categoryError.style.display = 'none';
+    category.style.border = '#858585 1px solid';
 }

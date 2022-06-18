@@ -20,10 +20,10 @@
             <input type="text" name="title" id="title"> <br>
             <div id="title_error_message" class="validation_error">Naslov mora imati 5 do 30 znakova!</div>
             <label for="summary">Kratki sadržaj (do 100 znakova)</label> <br>
-            <textarea name="summary" id="summary" cols="30" rows="10"></textarea> <br>
+            <textarea name="summary" id="summary" cols="30" rows="5"></textarea> <br>
             <div id="summary_error_message" class="validation_error">Kratki sadržaj vijesti mora imati 10 do 100 znakova</div>
             <label for="content">Sadržaj vijesti</label> <br>
-            <textarea name="content" id="content" cols="30" rows="10"></textarea> <br>
+            <textarea name="content" id="content" cols="30" rows="15"></textarea> <br>
             <div id="content_error_message" class="validation_error">Tekst vijesti ne smije biti prazan</div>
             <label for="image">Slika</label> <br>
             <span id="image_input"><input type="file" name="image" id="image" accept=".jpg,.gif,.png,.jpeg"></span> <br>
@@ -37,7 +37,7 @@
             <div id="category_error_message" class="validation_error">Kategorija mora biti odabrana</div>
             <input type="checkbox" name="archive" id="archive">
             <label for="archive">Spremiti u arhivu</label> <br>
-            <input type="reset" value="Poništi">
+            <input type="reset" value="Poništi" id="reset">
             <input type="submit" value="Unesi" id="submit">
         </form>
     </main>
