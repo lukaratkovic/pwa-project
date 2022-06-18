@@ -9,6 +9,8 @@ let contentError = document.getElementById('content_error_message');
 let imageError = document.getElementById('file_error_message');
 let categoryError = document.getElementById('category_error_message');
 
+let isUpdate = document.getElementById('id');
+
 // Form validation
 submitButton.onclick = (event) => {
     let valid = true;
@@ -49,7 +51,8 @@ submitButton.onclick = (event) => {
     }
 
     // Image upload validation
-    if(!image.files.length){
+    console.log(isUpdate);
+    if(!image.files.length && isUpdate == null){
         imageError.style.display = 'block';
         imageBorder.style.border = '1px solid red';
         valid = false;

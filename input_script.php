@@ -12,6 +12,7 @@
     <?php
         include_once('header.php');
         include_once('nav.php');
+        include_once('./upload_file.php');
         if(!isset($_POST['title'],$_POST['summary'],$_POST['content'],$_POST['category']) || !file_exists($_FILES['image']['tmp_name'])){
             echo "Nisu uneseni svi parametri!";
             include_once('footer.php');
@@ -28,33 +29,7 @@
         $archive = isset($_POST['archive']);
 
         //Find image type of uploaded image
-        $finfo = new finfo(FILEINFO_MIME);
-        $filename = $_FILES['image']['tmp_name'];
-        //determine image extension
-        switch($finfo->file($filename)){
-            case 'image/jpeg; charset=binary':
-                $fileExtension = ".jpeg";
-                break;
-            case 'image/png; charset=binary':
-                $fileExtension = ".png";
-                break;
-            case 'image/gif; charset=binary':
-                $fileExtension = ".gif";
-                break;
-            default:
-                echo "Error: Incorrect file type (jpeg, png, gif are allowed)";
-                include_once('footer.php');
-                die();
-        }
-        //Upload file to server
-        $dir = './articleImg';
-        $fileName = strval(time()) . $fileExtension;
-        $filePath = "$dir/$fileName";
-        if(!move_uploaded_file($_FILES['image']['tmp_name'], $filePath)){
-            echo "Error: File could not be uploaded.";
-            include_once('footer.php');
-            die();
-        }
+        $filePath = uploadToServer($_FILES['image']);
 
         //Display article
         echo "

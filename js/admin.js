@@ -15,6 +15,6 @@ function deleteArticle(id){
     });
 }
 
-function editArticle(){
-    
+function editArticle(id){
+    window.location.href = `./update.php?id=${id}`;
 }
