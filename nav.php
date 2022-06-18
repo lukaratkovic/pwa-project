@@ -16,6 +16,9 @@
             <a href="./admin.php">Administracija</a>
         </li>
         <li>
+            <a href="./login.php">Prijava</a>
+        </li>
+        <li>
             <a href="./register.php">Registracija</a>
         </li>
     </ul>

@@ -103,16 +103,18 @@ article img{
     object-position: 0 0;
 }
 
-/* Registration form */
-#registration_form{
+/* Registration and login form */
+#registration_form, #login_form{
     text-align: center;
 }
 
-#registration_form > form > input{
+#registration_form > form > input,
+#login_form > form > input{
     width: 20%;
 }
 
-#registration_error{
+#registration_error,
+#login_error{
     color:red;
     text-align: center;
 }
