@@ -15,6 +15,7 @@
         
         include_once('connect.php');
         renderArticlesByCategory("Zabava", $dbc);
+        echo "<hr>";
         renderArticlesByCategory("Sport", $dbc);
         
         include_once('footer.php');
@@ -26,7 +27,7 @@
             $statement->execute();
             $result = $statement->get_result();
             $articleN = 0;
-            echo "<h1>$category</h1>";
+            echo "<div class='article_title'><h1>$category</h1></div>";
             while($row = $result->fetch_array()){
                 $articlesPerRow = $row['category'] == 'zabava' ? 5 : 4;
                 $imagePath = $row['imagePath'];

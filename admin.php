@@ -42,10 +42,11 @@
                     $id = $row['id'];
                     $title = $row['title'];
                     $summary = $row['summary'];
-                    $content = $row['content'];
+                    $content = substr($row['content'], 0, 150);
+                    if(strlen($row['content']) > 150) $content = $content.'...';
                     $imagePath = $row['imagePath'];
                     $category = $row['category'];
-                    $archive = $row['archive'];
+                    $archive = $row['archive'] ? 'DA' : 'NE';
                     echo "
                     <tr>
                         <td id='$id'>$title</td>

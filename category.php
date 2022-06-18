@@ -27,7 +27,7 @@
     $statement->execute();
     $result = $statement->get_result();
     
-    echo "<main class='container-fluid'>";
+    echo "<main class='container-fluid' id='category_container'>";
     while($row = $result->fetch_array()){
         $id = $row['id'];
         $title = $row['title'];

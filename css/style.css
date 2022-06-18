@@ -6,9 +6,13 @@
 
 /* Header */
 
+header{
+    width: 80%;
+    margin: auto;
+}
 header img{
     width: 20%;
-    margin-left: 20%;
+    margin-top: 1%;
 }
 
 /* Navigation */
@@ -17,12 +21,27 @@ nav ul{
     list-style-type: none;
     display: flex;
     justify-content: space-evenly;
+    margin: auto;
+    width: 80%;
+}
+
+nav a:link, a:visited{
+    font-weight: bold;
+    color: grey;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: black;
+    text-decoration: underline;
 }
 
 /* Articles list */
 
 article img{
     width: 100%;
+    object-fit: cover;
+    height: 200px;
 }
 
 .articleList{
@@ -33,8 +52,27 @@ article img{
 }
 
 .articleList article{
-    max-width: 15%;
     padding: 20px;
+    flex-grow: 1;
+}
+
+.articleList a:link,
+.articleList a:visited,
+#category_container a:link,
+#category_container a:visited{
+    color: #222;
+    text-decoration: none;
+}
+
+.articleList a:hover,
+#category_container a:hover{
+    color: black;
+    text-shadow: 1px 1px 1px grey;
+}
+
+.article_title{
+    width: 78%;
+    margin: auto;
 }
 
 /* Input form */
@@ -43,6 +81,7 @@ article img{
     width: 80%;
     text-align: center;
     margin: auto;
+    margin-bottom: 2vh;
 }
 
 #input_form input:not(input[type='checkbox']),
@@ -100,7 +139,18 @@ article img{
 .category_article img{
     max-height: 20vh;
     object-fit: cover;
-    object-position: 0 0;
+}
+
+#category_container{
+    width: 80%;
+}
+
+#category_container article{
+    margin-bottom: 15px;
+}
+
+#category_container img{
+    border: 1px solid black;
 }
 
 /* Registration and login form */
@@ -118,6 +168,30 @@ article img{
     text-align: center;
 }
 
+/* Article */
+
+#article_body{
+    width: 80%;
+    margin: auto;
+}
+
+#article_body h1{
+    text-align: center;
+}
+
+#article_body #summary{
+    text-align: center;
+    color: grey;
+    font-weight: bold;
+}
+
+#article_body img{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    margin: 1vh 0;
+}
+
 /* Footer */
 
 footer{
@@ -129,5 +203,5 @@ footer{
 }
 
 footer p{
-    margin: 0;
+    margin: 5px;
 }
