@@ -36,7 +36,7 @@
             $statement->execute();
             $result = $statement->get_result();
             if($result->num_rows == 0){
-                echo "<div id='login_error'>Pogrešno korisničko ime ili lozinka!</div>";
+                echo "<div id='login_error' class='error'>Pogrešno korisničko ime ili lozinka!</div>";
             }
             else{
                 $row = $result->fetch_array();
@@ -45,9 +45,10 @@
                     session_start();
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['administrator'] = $row['administrator'];
+                    header("location: ./admin.php");
                 }
                 else{
-                    echo "<div id='login_error'>Pogrešno korisničko ime ili lozinka!</div>";
+                    echo "<div id='login_error' class='error'>Pogrešno korisničko ime ili lozinka!</div>";
                 }
             }
         }

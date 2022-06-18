@@ -40,7 +40,7 @@
             $statement->execute();
             $result = $statement->get_result();
             if(($result->fetch_array())['userExists']){
-                echo "<div id='registration_error'>Registracija neuspješna! Korisničko ime već postoji!</div>";
+                echo "<div id='registration_error' class='error'>Registracija neuspješna! Korisničko ime već postoji!</div>";
             }
             else{
                 $statement = $dbc->prepare("INSERT INTO user (username, password) VALUES (?,?)");

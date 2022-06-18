@@ -13,6 +13,11 @@
     <?php
         include_once('header.php');
         include_once('nav.php');
+        if(isset($_SESSION['administrator'])){
+            if(!$_SESSION['administrator']) header("location: ./unauthorized.php");
+        } else {
+            header("location: ./login.php");
+        }
     ?>
 
     <main id="admin_article_list">

@@ -16,10 +16,13 @@
             <a href="./admin.php">Administracija</a>
         </li>
         <li>
-            <a href="./login.php">Prijava</a>
-        </li>
-        <li>
-            <a href="./register.php">Registracija</a>
+            <?php
+                session_start();
+                if(isset($_SESSION['username']))
+                    echo "<a href='./logout.php'>Odjava</a>";
+                else
+                    echo "<a href='./register.php'>Registracija</a>"
+            ?>
         </li>
     </ul>
 </nav>
