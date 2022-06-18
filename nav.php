@@ -4,7 +4,7 @@
             <a href="./index.php">Home</a>
         </li>
         <li>
-            <a href="./unos.php">Unos</a>
+            <a href="./input.php">Unos</a>
         </li>
         <li>
             <a href="./category.php?c=zabava">Zabava</a>

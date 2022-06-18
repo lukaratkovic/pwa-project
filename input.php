@@ -15,7 +15,7 @@
     ?>
 
     <main id="input_form">
-        <form action="unos_skripta.php" method="post" enctype="multipart/form-data">
+        <form action="input_script.php" method="post" enctype="multipart/form-data">
             <label for="title">Naslov vijesti</label> <br>
             <input type="text" name="title" id="title"> <br>
             <div id="title_error_message" class="validation_error">Naslov mora imati 5 do 30 znakova!</div>
