@@ -25,7 +25,7 @@ nav ul{
     width: 80%;
 }
 
-nav a:link, a:visited{
+nav a:link, nav a:visited{
     font-weight: bold;
     color: grey;
     text-decoration: none;
