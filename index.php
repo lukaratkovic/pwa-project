@@ -22,14 +22,14 @@
 
         //Fetches all articles with category matching $category variable and renders them
         function renderArticlesByCategory($category, $dbc){
-            $statement = $dbc->prepare("SELECT category, imagePath, title, id FROM article WHERE archive=0 AND category=?");
-            $statement->bind_param('s', $category);
+            $articlesPerRow = $category == 'Zabava' ? 5 : 4;
+            $statement = $dbc->prepare("SELECT category, imagePath, title, id FROM article WHERE archive=0 AND category=? ORDER BY id DESC LIMIT ?");
+            $statement->bind_param('si', $category, $articlesPerRow);
             $statement->execute();
             $result = $statement->get_result();
             $articleN = 0;
             echo "<div class='article_title'><h1>$category</h1></div>";
             while($row = $result->fetch_array()){
-                $articlesPerRow = $row['category'] == 'zabava' ? 5 : 4;
                 $imagePath = $row['imagePath'];
                 $title = $row['title'];
                 $articleId = $row['id'];
