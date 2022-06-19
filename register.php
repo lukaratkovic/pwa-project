@@ -19,6 +19,12 @@
         <label for="username">Korisničko ime</label> <br>
         <input type="text" name="username" id="username"> <br>
         <div id="username_error_message" class="validation_error">Korisničko ime mora sadržavati između 4 i 15 znakova</div>
+        <label for="name">Ime</label> <br>
+        <input type="text" name="name" id="name"> <br>
+        <div id="name_error_message" class="validation_error">Ime ne smije biti prazno</div>
+        <label for="surname">Prezime</label> <br>
+        <input type="text" name="surname" id="surname"> <br>
+        <div id="surname_error_message" class="validation_error">Prezime ne smije biti prazno</div>
         <label for="password">Lozinka</label> <br>
         <input type="password" name="password" id="password"> <br>
         <div id="password_error_message" class="validation_error">Lozinka mora sadržavati barem 5 znakova</div>
@@ -33,6 +39,8 @@
         if(isset($_POST['username'], $_POST['password'])){
             $username = $_POST['username'];
             $password = password_hash($_POST['password'], CRYPT_BLOWFISH);
+            $name = $_POST['name'];
+            $surname = $_POST['surname'];
 
             include_once('./connect.php');
             $statement = $dbc->prepare("SELECT EXISTS(SELECT * FROM user WHERE username = ?) as userExists");
@@ -43,9 +51,13 @@
                 echo "<div id='registration_error' class='error'>Registracija neuspješna! Korisničko ime već postoji!</div>";
             }
             else{
-                $statement = $dbc->prepare("INSERT INTO user (username, password) VALUES (?,?)");
-                $statement->bind_param('ss',$username,$password);
+                $statement = $dbc->prepare("INSERT INTO user (username, password, name, surname) VALUES (?,?,?,?)");
+                $statement->bind_param('ssss',$username,$password,$name,$surname);
                 $statement->execute();
+                session_start();
+                $_SESSION['username'] = $username;
+                $_SESSION['administrator'] = 0;
+                header('location: ./index.php');
             }
         }
     ?>
