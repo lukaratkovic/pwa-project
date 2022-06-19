@@ -22,7 +22,7 @@
     include_once('connect.php');
     
     $category = $_GET['c'];
-    $statement = $dbc->prepare("SELECT category, summary, imagePath, title, id FROM article WHERE archive=0 AND category=?");
+    $statement = $dbc->prepare("SELECT category, summary, imagePath, title, id FROM article WHERE archive=0 AND category=? ORDER BY id DESC");
     $statement->bind_param('s',$category);
     $statement->execute();
     $result = $statement->get_result();

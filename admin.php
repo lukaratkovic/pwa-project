@@ -34,7 +34,7 @@
             </tr>
             <?php
                 include_once('./connect.php');
-                $statement = $dbc -> prepare("SELECT * FROM article");
+                $statement = $dbc -> prepare("SELECT * FROM article ORDER BY id DESC");
                 $statement->execute();
                 $result = $statement->get_result();
 
