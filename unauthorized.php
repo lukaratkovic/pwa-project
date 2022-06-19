@@ -13,8 +13,8 @@
         include_once('./header.php');
         include_once('./nav.php');
         
-        $user = $_SESSION['username'];
-        echo "Korisnik $user nema pristup administraciji!";
+        $user = $_SESSION['name'];
+        echo "<div id='no_access'>Korisnik $user nema pristup administraciji!</div>";
 
         include_once('./footer.php');
     ?>

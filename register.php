@@ -57,6 +57,7 @@
                 session_start();
                 $_SESSION['username'] = $username;
                 $_SESSION['administrator'] = 0;
+                $_SESSION['name']
                 header('location: ./index.php');
             }
         }

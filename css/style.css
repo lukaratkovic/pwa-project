@@ -192,6 +192,13 @@ article img{
     margin: 1vh 0;
 }
 
+/* Unauthorized */
+#no_access{
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
 /* Footer */
 
 footer{

@@ -31,7 +31,7 @@
             $password = $_POST['password'];
 
             include_once('./connect.php');
-            $statement = $dbc->prepare("SELECT username, password, administrator FROM user WHERE username = ?");
+            $statement = $dbc->prepare("SELECT username, name, password, administrator FROM user WHERE username = ?");
             $statement->bind_param('s',$username);
             $statement->execute();
             $result = $statement->get_result();
@@ -47,6 +47,7 @@
                     session_start();
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['administrator'] = $row['administrator'];
+                    $_SESSION['name'] = $row['name'];
                     header("location: ./admin.php");
                 }
                 else{
