@@ -20,6 +20,7 @@ header img{
 nav ul{
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     margin: auto;
     width: 80%;
@@ -48,12 +49,14 @@ article img{
     width: 80%;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
 .articleList article{
     padding: 20px;
     flex-grow: 1;
+    flex-basis: 10vw;
 }
 
 .articleList a:link,
@@ -161,6 +164,13 @@ article img{
 #registration_form > form > input,
 #login_form > form > input{
     width: 20%;
+}
+
+@media only screen and (max-width: 1000px){
+    #registration_form > form > input,
+    #login_form > form > input{
+        width: 80%;
+    }
 }
 
 .error{
